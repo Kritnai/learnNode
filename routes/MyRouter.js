@@ -1,4 +1,5 @@
 //การจัดการ routing
+const { render } = require('ejs')
 const express = require('express')
 const router = express.Router()
 
@@ -57,12 +58,23 @@ router.get('/', (req, res) => {
         name: "หูฟัง",
         price: 900,
         image: "images/products/product3.png"
+    },{
+        name: "หูฟัง",
+        price: 900,
+        image: "images/products/product3.png"
     }]
     res.render('index3.ejs', {
         products: products
     })
-
-
 })
+
+router.get('/add-form', (req, res) => {
+    res.render('form.ejs')
+})
+
+router.get('/manage', (req, res) => {
+    res.render('manage.ejs')
+})
+
 
 module.exports = router
