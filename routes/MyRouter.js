@@ -76,5 +76,18 @@ router.get('/manage', (req, res) => {
     res.render('manage.ejs')
 })
 
+/* การส่งข้อมูลรูปแบบ get method */ 
+// router.get('/insert', (req, res) => {
+//     console.log(req.query)
+//     res.render('form.ejs')
+// })
+
+/* การส่งข้อมูลรูปแบบ post method */
+
+router.post('/insert', (req, res) => {
+    console.log(req.body.name)
+    res.render('form.ejs')
+})
+
 
 module.exports = router
