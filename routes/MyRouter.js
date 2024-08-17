@@ -5,6 +5,9 @@ const router = express.Router()
 
 const path = require('path')
 
+// เรียกใช้งาน model
+const modelProduct = require('../models/products.js')
+
 /* ถ้าเป็น static file ไม่จำเป็นต้องทำ router เพราะสามารถเข้าถึง file ได้เลย */
 
 // router.get('/', (req, res) => {
@@ -83,7 +86,6 @@ router.get('/manage', (req, res) => {
 // })
 
 /* การส่งข้อมูลรูปแบบ post method */
-
 router.post('/insert', (req, res) => {
     console.log(req.body.name)
     res.render('form.ejs')
