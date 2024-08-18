@@ -27,20 +27,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                <% Object.values(products).forEach(function(item){ %>
                     <tr>
-                        <td>กระเป๋า</td>
-                        <td>500</td>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, recusandae.</td>
-                        <td><button class="btn btn-danger">ลบ</button></td>
+                        <td><%= item.name %></td>
+                        <td><%= item.price %></td>
+                        <td><%= item.description %></td>
+                        <td><a class="btn btn-danger" href="/delete/<%= item._id %>" onclick="return confirm('confirm to delete <%= item.name%>!!')">ลบ</a></td>
                         <td><button class="btn btn-primary">แก้ไข</button></td>
                     </tr>
-                    <tr>
-                        <td>Mary</td>
-                        <td>Moe</td>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, recusandae.</td>
-                        <td><button class="btn btn-danger">ลบ</button></td>
-                        <td><button class="btn btn-primary">แก้ไข</button></td>
-                    </tr>
+                <% }) %>
                 </tbody>
             </table>
         </div>

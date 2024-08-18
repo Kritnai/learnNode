@@ -18,7 +18,19 @@ let productSchema = mongoose.Schema({
 })
 
 // สร้าง Model
-let Product = mongoose.model("product", productSchema)
+let Product = mongoose.model("products", productSchema)
 
 // export model
 module.exports = Product
+
+// ออกแบบฟังชันสำหรับทึกข้อมูล
+// module.exports.saveProduct = function(model, data){
+//     model.save(data)
+// }
+module.exports.saveProduct = async function(model, data) {
+    try {
+        await model.save(data);
+    } catch (err) {
+        throw err;
+    }
+}
